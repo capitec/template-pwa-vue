@@ -1,0 +1,7 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.node.json",
+  "include": ["./**/*"],
+  "compilerOptions": {
+    "ignoreDeprecations": "5.0"
+  }
+}
