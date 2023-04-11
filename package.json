@@ -18,7 +18,8 @@
       "omni",
       "template",
       "starter",
-      "vue"
+      "vue",
+      "pwa"
   ],
   "dependencies": {
     "@capitec/omni-components": "^0.5.0",

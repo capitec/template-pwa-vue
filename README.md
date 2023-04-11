@@ -70,3 +70,18 @@ npm run test -- tests/example.spec.ts
 # Runs the tests in debug mode
 npm run test -- --debug
 ```
+
+# Showcased Features
+|     Feature    |  Availability |
+|-------------------------------|-----|
+|    Omni Components            |  ✅ |
+|    Omni Router                |  ✅ |
+|    Component Intellisense     |  ❌ |
+|    VS Code Debugging          |  ❌ |
+|    Tests                      |  ✅ |
+|    Serve                      |  ✅ |
+|    Build                      |  ✅ |
+|    Build chunking             |  ✅ |
+|    Preview built output       |  ✅ |
+|    Formatting                 |  ✅ |
+|    Linting                    |  ✅ |

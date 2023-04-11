@@ -9,6 +9,7 @@ import '@capitec/omni-components/button'
 import '@capitec/omni-components/check'
 import '@capitec/omni-components/email-field'
 import '@capitec/omni-components/hyperlink'
+import '@capitec/omni-components/icon'
 import '@capitec/omni-components/label'
 import '@capitec/omni-components/pin-field'
 import '@capitec/omni-components/radio'
@@ -80,6 +81,10 @@ function formSubmitted() {
                 hint="Enter a valid email address"
                 .value="state.emailValue"
                 @input="(e: InputEvent) => emailFieldInput(e)">
+                <!-- eslint-disable-next-line vue/no-deprecated-slot-attribute -->
+                <omni-icon size="medium" slot="suffix" class="suffix-slot">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%"><path d="M22 3.25a.75.75 0 0 1 .75.75v16a.75.75 0 0 1-.75.75H2a.75.75 0 0 1-.75-.75V4A.75.75 0 0 1 2 3.25Zm-.75 3.19-8.82 6.174a.75.75 0 0 1-.76.06l-.1-.06-8.82-6.173V19.25h18.5V6.44Zm-.202-1.69H2.951L12 11.084l9.048-6.334Z"/></svg>
+                </omni-icon>
             </omni-email-field>
             <omni-pin-field
                 ref="pinFieldRef"
@@ -143,5 +148,10 @@ function formSubmitted() {
 
 .terms {
   margin-top: 15px;
+}
+
+.suffix-slot {
+  margin-right: 10px;
+  color: var(--global-font-color);
 }
 </style>
