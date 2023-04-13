@@ -152,6 +152,6 @@ function formSubmitted() {
 
 .suffix-slot {
   margin-right: 10px;
-  color: var(--global-font-color);
+  color: var(--omni-theme-primary-color);
 }
 </style>

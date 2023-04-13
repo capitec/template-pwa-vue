@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Router } from '@capitec/omni-router'
-import { defineCustomElement } from 'vue'
+import { defineCustomElement,onMounted } from 'vue'
 
 import '@capitec/omni-components/label'
 import '@capitec/omni-components/hyperlink'
@@ -31,71 +31,14 @@ function toggleDarkMode() {
 
 const router = Router.getInstance()
 
-router.removeRoute('view-one')
-router.removeRoute('view-two')
-router.removeRoute('view-three')
-
-// Register the app routes.
-router.addRoute({
-  name: 'view-one',
-  title: 'One',
-  path: '/one',
-  animation: 'fade',
-  load: async () => {
-    const ViewOne = await import(
-      './modules/module-a/ViewOne.ce.vue'
-    )
-    if (!customElements.get('view-one')) {
+async function registerRouteElement(View: any, name: string) {
+    if (!customElements.get(name)) {
       // convert into custom element constructor
-      const ViewOneElement = defineCustomElement(ViewOne.default)
+      const ViewElement = defineCustomElement(View.default)
 
       // register
-      customElements.define('view-one', ViewOneElement)
+      customElements.define(name, ViewElement)
     }
-  },
-  isDefault: true
-})
-
-router.addRoute({
-  name: 'view-two',
-  title: 'Two',
-  path: '/two',
-  animation: 'pop',
-  load: async () => {
-    const ViewTwo = await import(
-      './modules/module-a/ViewTwo.ce.vue'
-    )
-    if (!customElements.get('view-two')) {
-      // convert into custom element constructor
-      const ViewTwoElement = defineCustomElement(ViewTwo.default)
-
-      // register
-      customElements.define('view-two', ViewTwoElement)
-    }
-  }
-})
-
-router.addRoute({
-  name: 'view-three',
-  title: 'Three',
-  path: '/three',
-  animation: 'slide',
-  load: async () => {
-    const ViewThree = await import(
-      './modules/module-b/ViewThree.ce.vue'
-    )
-    if (!customElements.get('view-three')) {
-      // convert into custom element constructor
-      const ViewThreeElement = defineCustomElement(ViewThree.default)
-
-      // register
-      customElements.define('view-three', ViewThreeElement)
-    }
-  }
-})
-
-if (darkMode) {
-  document.documentElement.setAttribute('dark', '')
 }
 
 async function loadRoute() {
@@ -110,7 +53,41 @@ function navigate(event: MouseEvent, path: string) {
 	router.push(path)
 }
 
-loadRoute()
+onMounted(() => {
+  console.log('App mounted')
+
+  // Register the app routes.
+  router.addRoute({
+    name: 'view-one',
+    title: 'One',
+    path: '/one',
+    animation: 'fade',
+    load: async () => await registerRouteElement(await import('./modules/module-a/ViewOne.ce.vue'),'view-one'),
+    isDefault: true
+  })
+
+  router.addRoute({
+    name: 'view-two',
+    title: 'Two',
+    path: '/two',
+    animation: 'pop',
+    load: async () => await registerRouteElement(await import('./modules/module-a/ViewTwo.ce.vue'),'view-two')
+  })
+
+  router.addRoute({
+    name: 'view-three',
+    title: 'Three',
+    path: '/three',
+    animation: 'slide',
+    load: async () => await registerRouteElement(await import('./modules/module-b/ViewThree.ce.vue'),'view-three')
+  })
+
+  if (darkMode) {
+    document.documentElement.setAttribute('dark', '')
+  }
+
+  loadRoute()
+})
 </script>
 
 <template>
