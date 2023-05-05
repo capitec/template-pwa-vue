@@ -21,8 +21,9 @@
       "vue",
       "pwa"
   ],
+"license": "MIT",
   "dependencies": {
-    "@capitec/omni-components": "^0.5.0",
+    "@capitec/omni-components": "^0.6.0",
     "@capitec/omni-router": "^0.0.3",
     "vue": "^3.2.47"
   },

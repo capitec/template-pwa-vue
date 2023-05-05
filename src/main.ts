@@ -1,9 +1,8 @@
 import { createApp, h } from 'vue';
-import App from './App.vue';
+import AppShell from './AppShell.vue';
 
 import './assets/main.css';
 
 createApp({
-    // ...App,
-    render: () => h(App)
+    render: () => h(AppShell)
 }).mount('#app');
