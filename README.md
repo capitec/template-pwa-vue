@@ -17,8 +17,8 @@ Progressive Web App (PWA) starter template for [Vue](https://vuejs.org/)-based S
     - [Prettier](https://prettier.io/) for opinionated code formatting.
 - Runtime
     - [Omni Components](https://github.com/capitec/omni-components) for UI components.
-    - [Omni Router](https://github.com/capitec/omni-router) for client-side routing.
     - [Vue](https://vuejs.org/) for SPA development.
+    - [Vue Router](https://router.vuejs.org/) for client-side routing.
 
 # Usage
 
