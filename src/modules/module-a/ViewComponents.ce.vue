@@ -140,6 +140,7 @@ function sizeChange(e: Event) {
     color: var(--omni-theme-font-color);
     padding: 24px 0;
     border-bottom: 1px solid white;
+    align-self: stretch;
 }
 
 .item:last-of-type {
