@@ -72,16 +72,17 @@ npm run test -- --debug
 ```
 
 # Showcased Features
-|     Feature    |  Availability |
-|-------------------------------|-----|
-|    Omni Components            |  ✅ |
-|    Omni Router                |  ✅ |
-|    Component Intellisense     |  ❌ |
-|    VS Code Debugging          |  ❌ |
-|    Tests                      |  ✅ |
-|    Serve                      |  ✅ |
-|    Build                      |  ✅ |
-|    Build chunking             |  ✅ |
-|    Preview built output       |  ✅ |
-|    Formatting                 |  ✅ |
-|    Linting                    |  ✅ |
+|     Feature    |  Availability | Description |
+|-------------------------------|-----|-----------------------------------------------------------------|
+|    Components                 | ✅  | [Omni Components](https://github.com/capitec/omni-components)   |
+|    Routing                    | ✅  | [Omni Router](https://github.com/capitec/omni-router)           |
+|    Component Intellisense     | ❌  | Not available                                                   |
+|    VS Code Debugging          | ❌  | Not available                                                   |
+|    Tests                      | ✅  | Provided via [Playwright](https://playwright.dev/)              |
+|    Serve                      | ✅  | Provided via [Vite](https://vitejs.dev/)                        |
+|    Build                      | ✅  | Provided via [Vite](https://vitejs.dev/)                        |
+|    Build chunking             | ✅  | Provided via `vite.config.ts`                                   |
+|    Preview built output       | ✅  | Provided via [Vite](https://vitejs.dev/)                        |
+|    Formatting                 | ✅  | Provided via [Prettier](https://prettier.io/)                   |
+|    Linting                    | ✅  | Provided via [ESLint](https://eslint.org/)                      |
+
