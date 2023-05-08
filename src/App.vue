@@ -1,90 +1,45 @@
 <script setup lang="ts">
-import { Router } from '@capitec/omni-router'
-import { defineCustomElement, onMounted } from 'vue'
+import { onMounted } from 'vue';
+import { RouterView } from 'vue-router';
 
-import '@capitec/omni-components/label'
-import '@capitec/omni-components/hyperlink'
-import '@capitec/omni-components/switch'
+import router from '@/router';
+
+import '@capitec/omni-components/label';
+import '@capitec/omni-components/hyperlink';
+import '@capitec/omni-components/switch';
 
 const darkMediaQuery = window.matchMedia
     ? window.matchMedia('(prefers-color-scheme: dark)')
-    : undefined
-darkMediaQuery?.addEventListener('change', darkPreferenceChange)
-let darkMode: boolean = darkMediaQuery?.matches ?? false
+    : undefined;
+darkMediaQuery?.addEventListener('change', darkPreferenceChange);
+let darkMode: boolean = darkMediaQuery?.matches ?? false;
 
 function darkPreferenceChange(m: MediaQueryListEvent) {
     if (!darkMode && m.matches) {
-        toggleDarkMode()
+        toggleDarkMode();
     } else if (darkMode && !m.matches) {
-        toggleDarkMode()
+        toggleDarkMode();
     }
 }
 
 function toggleDarkMode() {
-    darkMode = !darkMode
+    darkMode = !darkMode;
     if (darkMode) {
-        document.documentElement.setAttribute('dark', '')
+        document.documentElement.setAttribute('dark', '');
     } else {
-        document.documentElement.removeAttribute('dark')
+        document.documentElement.removeAttribute('dark');
     }
-}
-
-const router = Router.getInstance()
-
-async function registerRouteElement(View: any, name: string) {
-    if (!customElements.get(name)) {
-        // convert into custom element constructor
-        const ViewElement = defineCustomElement(View.default)
-
-        // register
-        customElements.define(name, ViewElement)
-    }
-}
-
-async function loadRoute() {
-    await customElements.whenDefined('omni-router')
-    await router.load();
 }
 
 function navigate(event: MouseEvent, path: string) {
-    event.preventDefault()
-    router.push(path)
+    event.preventDefault();
+    router.push(path);
 }
 
 onMounted(() => {
-    console.log('App mounted')
-
-    // Register the app routes.
-    router.addRoute({
-        name: 'view-home',
-        title: 'Home',
-        path: '/',
-        animation: 'fade',
-        load: async () => await registerRouteElement(await import('./modules/module-a/ViewHome.ce.vue'), 'view-home'),
-        isDefault: true
-    })
-
-    router.addRoute({
-        name: 'view-components',
-        title: 'Components',
-        path: '/components',
-        animation: 'pop',
-        load: async () => await registerRouteElement(await import('./modules/module-a/ViewComponents.ce.vue'), 'view-components')
-    })
-
-    router.addRoute({
-        name: 'view-form',
-        title: 'Form',
-        path: '/form',
-        animation: 'slide',
-        load: async () => await registerRouteElement(await import('./modules/module-b/ViewForm.ce.vue'), 'view-form')
-    })
-
     if (darkMode) {
-        document.documentElement.setAttribute('dark', '')
+        document.documentElement.setAttribute('dark', '');
     }
-
-    loadRoute()
 })
 </script>
 
@@ -96,13 +51,12 @@ onMounted(() => {
     <div class="navbar">
         <nav>
             <omni-hyperlink href="/" @click="(e: MouseEvent) => navigate(e, '/')">Home</omni-hyperlink>
-            <omni-hyperlink href="/components" @click="(e: MouseEvent) => navigate(e, '/components')"
-                label="Components"></omni-hyperlink>
+            <omni-hyperlink href="/components" @click="(e: MouseEvent) => navigate(e, '/components')" label="Components"></omni-hyperlink>
             <omni-hyperlink href="/form" @click="(e: MouseEvent) => navigate(e, '/form')" label="Form"></omni-hyperlink>
         </nav>
         <omni-switch :checked.prop="darkMode" @value-change="() => toggleDarkMode()"><span>Dark Mode</span></omni-switch>
     </div>
-    <omni-router></omni-router>
+    <RouterView class="router" />
 </template>
 
 <style lang="css" scoped>
@@ -225,7 +179,7 @@ nav>omni-hyperlink:hover {
 }
 
 /* CONTENT AREA */
-omni-router {
+.router {
     flex: 1 1 auto;
 }
 </style>

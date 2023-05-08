@@ -75,7 +75,7 @@ npm run test -- --debug
 |     Feature    |  Availability | Description |
 |-------------------------------|-----|-----------------------------------------------------------------|
 |    Components                 | ✅  | [Omni Components](https://github.com/capitec/omni-components)   |
-|    Routing                    | ✅  | [Omni Router](https://github.com/capitec/omni-router)           |
+|    Routing                    | ✅  | [Vue Router](https://router.vuejs.org/)                         |
 |    Component Intellisense     | ❌  | Not available                                                   |
 |    VS Code Debugging          | ❌  | Not available                                                   |
 |    Tests                      | ✅  | Provided via [Playwright](https://playwright.dev/)              |

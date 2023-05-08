@@ -8,3 +8,11 @@
     justify-content: stretch;
     align-items: stretch;
 }
+
+.content-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: center;
+    background-color: var(--global-background-color);
+}
