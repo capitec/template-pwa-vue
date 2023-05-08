@@ -6,12 +6,12 @@ test('has title', async ({ page }) => {
   await page.goto('/');
 
   // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/One/);
+  await expect(page).toHaveTitle(/Home/);
 })
 
 test('has routed title', async ({ page }) => {
-  await page.goto('/two');
+  await page.goto('/components');
 
   // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Two/);
+  await expect(page).toHaveTitle(/Components/);
 })

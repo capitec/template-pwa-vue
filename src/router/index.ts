@@ -19,6 +19,9 @@ const router = createRouter({
       component: () => import('../modules/module-b/ViewForm.vue')
     }
   ]
-})
+});
+router.afterEach((to, from, failure) => {
+  if (!failure) document.title = to.name?.toString() as string;
+});
 
 export default router;
