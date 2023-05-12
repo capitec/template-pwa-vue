@@ -115,7 +115,7 @@ function formSubmitted() {
                     .value="state.pinValue"
                     @input="(e: InputEvent) => pinFieldInput(e)">
                 </omni-pin-field>
-                <omni-radio-group class="radio-group" label="Select your account type" :horizontal="true">
+                <omni-radio-group class="radio-group" label="Account Type" :horizontal="true">
                     <omni-radio label="Developer"></omni-radio>
                     <omni-radio label="Admin"></omni-radio>
                     <omni-radio label="Casual User" :checked="true"></omni-radio>

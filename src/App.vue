@@ -136,7 +136,6 @@ nav {
 
     font-size: 16px;
     font-weight: normal;
-    padding: 0px 20px;
     flex-shrink: 0;
     flex-wrap: wrap;
     transition: all 0.5s linear;
