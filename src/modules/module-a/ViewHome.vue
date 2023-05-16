@@ -41,7 +41,7 @@ import InfoBlock from '@/components/InfoBlock.vue';
                     <span>
                         Tooling is provided by
                         <omni-hyperlink href="https://vuejs.org/guide/quick-start.html" target="_blank">Vue + Vite</omni-hyperlink>, standard as per
-                        the init process.
+                            the init process. Static code analysis provided by <omni-hyperlink href="https://eslint.org/" target="_blank">ES Lint</omni-hyperlink> and code formatting provided by <omni-hyperlink href="https://prettier.io/" target="_blank">Prettier</omni-hyperlink>. Testing of components and views provided by <omni-hyperlink href="https://playwright.dev/" target="_blank">Playwright</omni-hyperlink>.
                     </span>
                 </div>
             </div>
