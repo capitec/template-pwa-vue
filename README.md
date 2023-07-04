@@ -2,24 +2,6 @@
 
 Progressive Web App (PWA) starter template for [Vue](https://vuejs.org/)-based Single-page application (SPA) development, leveraging various [Omni](https://github.com/capitec?q=omni-) libraries.
 
-### Headline Features: 🌟
-- TypeScript support.
-- Dark-mode support.
-- Integrated bundling, testing, linting & formatting support.
-- Basic SPA boilerplate with routing & PWA setup.
-
-### Key Dependencies: 🛠️
-- Tooling
-    - [VS Code](https://code.visualstudio.com) for application development.
-    - [Vite](https://vitejs.dev/) for module bundling.
-    - [Playwright](https://playwright.dev/) for end-to-end headless browser testing.
-    - [ESLint](https://eslint.org/) for static code analysis.
-    - [Prettier](https://prettier.io/) for opinionated code formatting.
-- Runtime
-    - [Omni Components](https://github.com/capitec/omni-components) for UI components.
-    - [Vue](https://vuejs.org/) for SPA development.
-    - [Vue Router](https://router.vuejs.org/) for client-side routing.
-
 # Usage
 
 1️⃣ &nbsp; Create a new [repository from this template](https://github.com/capitec/template-pwa-vue/generate) (or fork) and clone locally:
@@ -75,14 +57,14 @@ npm run test -- --debug
 |     Feature    |  Availability | Description |
 |-------------------------------|-----|-----------------------------------------------------------------|
 |    Components                 | ✅  | [Omni Components](https://github.com/capitec/omni-components)   |
-|    Routing                    | ✅  | [Vue Router](https://router.vuejs.org/)                         |
 |    Component Intellisense     | ❌  | Not available                                                   |
+|    Routing                    | ✅  | [Vue Router](https://router.vuejs.org/)                         |
 |    VS Code Debugging          | ❌  | Not available                                                   |
-|    Tests                      | ✅  | Provided via [Playwright](https://playwright.dev/)              |
-|    Serve                      | ✅  | Provided via [Vite](https://vitejs.dev/)                        |
-|    Build                      | ✅  | Provided via [Vite](https://vitejs.dev/)                        |
-|    Build chunking             | ✅  | Provided via `vite.config.ts`                                   |
-|    Preview built output       | ✅  | Provided via [Vite](https://vitejs.dev/)                        |
-|    Formatting                 | ✅  | Provided via [Prettier](https://prettier.io/)                   |
-|    Linting                    | ✅  | Provided via [ESLint](https://eslint.org/)                      |
+|    Tests                      | ✅  | [Playwright](https://playwright.dev/)              |
+|    Serve                      | ✅  | [Vite](https://vitejs.dev/)                        |
+|    Build                      | ✅  | [Vite](https://vitejs.dev/)                        |
+|    Build chunking             | ✅  | [vite.config.ts](./vite.config.ts)                                   |
+|    Preview built output       | ✅  | [Vite](https://vitejs.dev/)                        |
+|    Formatting                 | ✅  | [Prettier](https://prettier.io/)                   |
+|    Linting                    | ✅  | [ESLint](https://eslint.org/)                      |
 
