@@ -19,11 +19,11 @@ import '@capitec/omni-components/text-field';
 const state: {
     formValid: boolean
     emailValue?: string
-    pinValue?: number
+    pinValue?: string
 } = reactive({
     formValid: false,
     emailValue: '',
-    pinValue: undefined
+    pinValue: ''
 })
 
 const checkRef = ref();
