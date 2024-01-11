@@ -23,7 +23,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@capitec/omni-components": "^0.10.0",
+    "@capitec/omni-components": "^0.11.0",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6"
   },
